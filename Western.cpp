@@ -38,26 +38,30 @@ void customIPSW() {
   cout << "Input the file path of the original ipsw..." << endl;
 
   getline(cin, ipsw);
-
+    
   system(("cd resources/bin/ && ./ipsw " + ipsw + custom).c_str());
 
 }
 
 void pwnDFU() {
-
-system("cd resources/bin/ipwndfu && ./ipwndfu -p");
+    
+    system("cd resources/bin/ipwndfu && ./ipwndfu -p");
 
 }
 
 void installKpwn() {
+    
+    pwnDFU();
 
-system("cd resources/bin/ipwndfu && ./ipwndfu --24kpwn");
+    system("cd resources/bin/ipwndfu && ./ipwndfu --24kpwn");
 
 }
 
 void installAlloc8() {
+    
+    pwnDFU();
 
-system("cd resources/bin/ipwndfu && ./ipwndfu -x");
+    system("cd resources/bin/ipwndfu && ./ipwndfu -x");
 
 }
 
@@ -85,17 +89,17 @@ if ( argc < 2 || argc >= 4 ) {
 
 for(int i = 1; i < argc; i++) {
 
-if (strcmp(argv[1], "-i") == 0)
+if (strcmp(argv[i], "-i") == 0)
   customIPSW();
-if (strcmp(argv[1], "-p") == 0)
+if (strcmp(argv[i], "-p") == 0)
   pwnDFU();
-if (strcmp(argv[1], "-k") == 0)
+if (strcmp(argv[i], "-k") == 0)
   installKpwn();
-if (strcmp(argv[1], "-a") == 0)
+if (strcmp(argv[i], "-a") == 0)
   installAlloc8();
-if (strcmp(argv[1], "-v") == 0)
+if (strcmp(argv[i], "-v") == 0)
   installVerbose();
-if (strcmp(argv[1], "-c") == 0)
+if (strcmp(argv[i], "-c") == 0)
   printCredits();
 
 }
