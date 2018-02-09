@@ -45,6 +45,12 @@ void customIPSW() {
 
 void pwnDFU() {
     
+    string waitDFU;
+    
+    cout << "Put your device into DFU mode, then hit Enter when done." << endl;
+    
+    getline(cin, waitDFU);
+    
     system("cd resources/bin/ipwndfu && ./ipwndfu -p");
 
 }
@@ -69,7 +75,7 @@ int main(int argc, char* argv[]) {
 
 if ( argc < 2 || argc >= 4 ) {
 
-  printf("Usage: %s <file in> <file out> [args]\n", argv[0]); // argv[0] is basically calling the printf functions in the first array: [0] which is "./Western-osx."
+  printf("Usage: %s [args]\n", argv[0]);
       printf("\t-i create a custom ipsw\n");
       printf("\t-p pwn dfu \n");
       printf("\t-k install 24kpwn to NOR\n");
