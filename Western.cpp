@@ -4,13 +4,10 @@
 
 using namespace std;
 
-/*
-* Now we're telling main that if there is less than 4 given arguments (calling the program itself is the first[aka 0 in the array])
-* to then call print out the programs main functions and useable arguments...
-*/
-
 int printCredits() {
-   cout << "\nMade by @Vyce_Merculous, @32Bites, and Dingdongding30 on reddit. Original code made by @32bites. Refactored by @Vyce_Merculous into a C++ file.\n" << endl;
+   cout << "Made by @Vyce_Merculous, @32Bites, and Dingdongding30 from reddit." << endl;
+   cout << "Original code made by @32bites. Refactored by @Vyce_Merculous into a C++ file." << endl;
+   cout << "Made less suck-y by 0xFF" << endl;
    exit 0;
 }
 
@@ -29,32 +26,37 @@ int customIPSW() {
   system(("cd resources/bin/ && ./ipsw " + ipsw + custom).c_str());
 }
 
-void pwnDFU() {
+int pwnDFU() {
     string waitDFU;
     cout << "Put your device into DFU mode, then hit Enter when done." << endl;
     getline(cin, waitDFU);
     system("cd resources/bin/ipwndfu && ./ipwndfu -p");
 }
 
-void install24KPWN() {
+int install24KPWN() {
     pwnDFU();
     system("cd resources/bin/ipwndfu && ./ipwndfu --24kpwn");
 }
 
-void installAlloc8() {
+int installAlloc8() {
     pwnDFU();
     system("cd resources/bin/ipwndfu && ./ipwndfu -x");
 }
 
 int main(int argc, char* argv[]) {
+   /*
+   * Now we're telling main that if there is less than 4 given arguments (calling the program itself is the first [aka 0 in the array] )
+   * to then call print out the programs main functions and useable arguments...
+   */
    if ( argc < 2 || argc >= 4 ) {
-     printf("Usage: %s [args]\n", argv[0]);
-         printf("\t-i create a custom ipsw\n");
-         printf("\t-p pwn dfu \n");
-         printf("\t-k install 24kpwn to NOR\n");
-         printf("\t-a install allco8 to NOR\n");
-         printf("\t-v install verbose boot to NOR\n");
-         printf("\t-c prints out the credits and info about the program\n");
+      cout << "Usage: " << argv[0] << " [args]" << endl;
+      cout << "-h: Prints this help menu" << endl;
+      cout << "-i: Creates a custom IPSW" << endl;
+      cout << "-p: Enter Pwned DFU for restoration of a custom firmware" << endl;
+      cout << "-k: Install 24kpwn to the NOR" << endl;
+      cout << "-a: Install alloc8 to the NOR" << endl;
+      cout << "-v: Flashes NOR with verbose boot-args to device" << endl;
+      cout << "-c: Prints Credits" << endl;
    }
 /*
 * Checks if argv[1] (the argument passed) is equal to the valid options.
