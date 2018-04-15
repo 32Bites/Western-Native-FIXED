@@ -5,11 +5,11 @@ For license info, check the LICENSE file.
 
 ## Compiling
 
-`cd` into the Western source code directory, then type `g++` or `clang++` `Western.cpp -o *Whatever you want here*`
+`cd` into the Western source code directory, then type `g++ Western.cpp -o Western` or `clang++ Western.cpp -o Western`
 
 ## Usage
 
-Just `cd` into the Western folder with the compiled binary, then just type:  `./Western *Whatever you put*`
+Just `cd` into the Western folder with the compiled binary, then just type:  `./Western -h` for help
 
 ## Credit
 * 32Bites for making the original script, and doing a bit of patching up stuff.
@@ -17,7 +17,7 @@ Just `cd` into the Western folder with the compiled binary, then just type:  `./
 * Axi0mX for ipwndfu.
 * planetbeing for XPwn.
 * Dingdongding30 on Reddit for some tips :P.
-
+* 0xFF for making this suck less
 
 ## Using verbose NOR dumps..
 
