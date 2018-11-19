@@ -1,7 +1,6 @@
 # Western
 A project? I guess. Will include 3GS 3.0 and 3.0.1 bundles soon.
-A wrapper for ipwndfu.
-
+A wrapper for OUTDATED ipwndfu.
 For license info, check the LICENSE file.
 
 ## Compiling
